@@ -1,0 +1,51 @@
+#Backlight Down
+"xbacklight -dec 5"
+    m:40x0 + c:72
+    Mod4 + F6
+
+#Backlight Up
+"xbacklight -inc 5"
+    m:0x40 + c:73
+    Mod4 + F7 
+
+#Mute
+"amixer set Master toggle"
+    m:0x40 + c:74
+    Mod4 + F8 
+
+#Decrease Volume
+"amixer set Master 5- unmute"
+    m:0x40 + c:75
+    Mod4 + F9 
+
+#Increase Volume
+"amixer set Master 5+ unmute"
+    m:0x40 + c:76
+    Mod4 + F10 
+
+# added Home, End, Pg Up, Pg Down, and Del keys using the Alt+arrow key combos
+#Delete
+#"xvkbd -xsendevent -text '\[Delete]'"
+#    m:0x8 + c:22
+#   Alt + BackSpace 
+
+#End
+#"xvkbd -xsendevent -text '\[End]'"
+#    m:0x8 + c:114
+#    Alt + Right 
+
+#Home
+#"xvkbd -xsendevent -text '\[Home]'"
+#    m:0x8 + c:113
+#    Alt + Left 
+
+#Page Down
+#"xvkbd -xsendevent -text '\[Page_Down]'"
+#    m:0x40 + c:116
+#    Mod4 + Down 
+
+#Page Up
+#"xvkbd -xsendevent -text '\[Page_Up]'"
+#    m:0x40 + c:111
+#    Mod4 + Up 
+
