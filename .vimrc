@@ -108,3 +108,6 @@ let mapleader = ","
 map <Leader>jc :!javac %<CR>
 set backupdir=~/.vimbackups
 set undodir=~/.vimbackups
+imap jj <esc>
+let mapleader = ","
+execute pathogen#infect()
