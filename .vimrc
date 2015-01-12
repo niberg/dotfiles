@@ -1,23 +1,17 @@
+filetype off                  " required
 
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2014 Feb 05
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
+set nocompatible
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'wellle/targets.vim'
+Bundle 'jiangmiao/auto-pairs'
+call vundle#end()            " required
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -28,7 +22,11 @@ else
   set backup		" keep a backup file (restore to previous version)
   set undofile		" keep an undo file (undo changes after closing)
 endif
-set history=50		" keep 50 lines of command line history
+set history=1000		" keep 50 lines of command line history
+set undolevels=1000
+set visualbell
+set noerrorbells
+nmap <silent> ,/ :nohlsearch<CR>
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -105,9 +103,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 let mapleader = ","
-map <Leader>jc :!javac %<CR>
 set backupdir=~/.vimbackups
 set undodir=~/.vimbackups
 imap jj <esc>
 let mapleader = ","
-execute pathogen#infect()
