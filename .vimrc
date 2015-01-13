@@ -4,8 +4,13 @@ set nocompatible
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'wellle/targets.vim'
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'wellle/targets.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 call vundle#end()            " required
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -107,3 +112,23 @@ set backupdir=~/.vimbackups
 set undodir=~/.vimbackups
 imap jj <esc>
 let mapleader = ","
+map <Leader> <Plug>(easymotion-prefix)
+
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+" Gif config
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_smartcase = 1
+nnoremap <esc> :noh<return><esc>
