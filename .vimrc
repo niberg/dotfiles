@@ -11,6 +11,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+
 call vundle#end()            " required
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -103,15 +105,15 @@ endif
 set number
 set clipboard=unnamedplus
 colorscheme vividchalk
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 let mapleader = ","
 set backupdir=~/.vimbackups
 set undodir=~/.vimbackups
 imap jj <esc>
-let mapleader = ","
+let maplocalleader = "''"
 map <Leader> <Plug>(easymotion-prefix)
 
 " Gif config
@@ -131,4 +133,4 @@ map <Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
-nnoremap <esc> :noh<return><esc>
+vnoremap . :norm.<CR>
